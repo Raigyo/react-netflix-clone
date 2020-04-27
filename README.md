@@ -25,11 +25,11 @@ another component
 
     ---Home page:
 
-      ---Header Img
-      ---Searchbar
-      ---Posters List (fixed)
-      -----Poster
-      ---Load Button / see more
+    ------Header Img
+    ------Searchbar
+    ------Posters List (fixed)
+    ---------Poster
+    ------Load Button / see more
 
 
 ## How to use
