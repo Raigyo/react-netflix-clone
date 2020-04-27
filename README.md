@@ -26,10 +26,16 @@ another component
     ---Home page:
 
     ------Header Img
+
     ------Searchbar
+
     ------Posters List (fixed)
+
     ---------Poster
+
     ------Load Button / see more
+
+  - xxx
 
 
 ## How to use
