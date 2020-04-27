@@ -5,14 +5,28 @@
 > 🔨 From Udemy
 '[Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)'.
 
-See demo on [Heroku](https://three-js-first-steps.herokuapp.com/).
+See demo on [GitHub page](#).
 
 ![react-redux logo](./readme-img/react-redux-logo.png)
 
 
-
 ## About
 
+### Concepts covered
+
+- Lifecycle of Components
+- Higher-order components (HOC): function that takes a component as parameter and that return 
+another component
+- decomposer and prioritize components
+
+    Home page:
+
+        - Header (fixed)
+        - Header Img
+        - Searchbar
+        - Posters List (fixed)
+        - --Poster
+        - Load Button
 
 
 ## How to use
@@ -42,9 +56,9 @@ See demo on [GitHub page](#).
 - [GitHub: udemy-react-netflix](https://github.com/JulienKisoni/udemy-react-netflix)
 - [React.Component](https://fr.reactjs.org/docs/react-component.html)
 - [React Lifecycle Methods diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- [ReactJS Higher Order Components Tutorial](https://www.codingame.com/playgrounds/8595/reactjs-higher-order-components-tutorial)
 - [React Developer Tools Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 - [React Developer Tools Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
-- []()
 - []()
 - []()
 - []()
