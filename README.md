@@ -15,18 +15,21 @@ See demo on [GitHub page](#).
 ### Concepts covered
 
 - Lifecycle of Components
-- Higher-order components (HOC): function that takes a component as parameter and that return 
+- Higher-order components (HOC): function that takes a component as parameter and that return
 another component
-- decomposer and prioritize components
+- Decompose and prioritize components:
 
-    Home page:
+    App
 
-        - Header (fixed)
-        - Header Img
-        - Searchbar
-        - Posters List (fixed)
-        - --Poster
-        - Load Button
+    ---Header (fixed)
+
+    ---Home page:
+
+      ---Header Img
+      ---Searchbar
+      ---Posters List (fixed)
+      -----Poster
+      ---Load Button / see more
 
 
 ## How to use
