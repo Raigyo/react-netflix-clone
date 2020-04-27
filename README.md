@@ -35,7 +35,7 @@ another component
 
     ------Load Button / see more
 
-  - xxx
+- xxx
 
 
 ## How to use
