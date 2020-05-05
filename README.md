@@ -60,7 +60,7 @@ See demo on [GitHub page](#).
 
 ## Packages used
 
--[React Icons](https://react-icons.github.io/react-icons/#/)
+- [React Icons](https://react-icons.github.io/react-icons/#/)
 
   `npm install react-icons --save`
 
@@ -79,6 +79,6 @@ See demo on [GitHub page](#).
 - [React Developer Tools Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 - [React Developer Tools Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 - [VSC: Reactjs code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
-- []()
+- [Using index.js for Fun and Public Interfaces](https://alligator.io/react/index-js-public-interfaces/)
 - []()
 - []()
