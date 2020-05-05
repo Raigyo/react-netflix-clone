@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { HeaderImg, SearchBar, PosterList } from '../components';
+import { HeaderImg, SearchBar, PosterList, LoadButton } from '../components';
 
 const movies = [
     {
@@ -49,6 +49,7 @@ class Home extends Component {
           />
           <SearchBar />
           <PosterList movies={movies} />
+          <LoadButton Loading={false} />
         </div>
     );
   }

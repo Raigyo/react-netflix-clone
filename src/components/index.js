@@ -6,3 +6,4 @@ export * from './HeaderImg';
 export * from './SearchBar';
 export * from './PosterList';
 export * from './Poster';
+export * from './LoadButton';
