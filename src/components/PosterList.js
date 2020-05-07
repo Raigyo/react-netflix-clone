@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 import { Poster } from './index';
 
 import '../css/PosterList.css';
@@ -9,13 +10,12 @@ class PosterList extends Component {
   renderPoster = () =>{
     //map = foreach ,  key needed
     return this.props.movies.map( movie => {
-      const imgSrc = movie.poster_path;
+      const imgSrc = `${IMAGE_BASE_URL}/${POSTER_SIZE}/${movie.poster_path}`;
       wish = false;
       return (
         <Poster
           key={movie.id}
           imgSrc={imgSrc}
-          hover={false}
           wished={wish}
           movie={movie}
           mTitle={movie.title}
@@ -27,7 +27,7 @@ class PosterList extends Component {
   render() {
     return (
       <div className="posterList">
-        <h3 className="posterList--title">NEW MOVIES</h3>
+        <h3 className="posterList--title">POPULAR MOVIES</h3>
         <div className="posterList--grid">
           {this.renderPoster()}
         </div>

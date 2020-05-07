@@ -11,17 +11,19 @@ class LoadButton extends Component {
         html or if we use invalid DOM in JSX:
         Fragments let you group a list of children without adding extra nodes to the DOM. */}
 
-        { /*conditional rendering: mousehover or not*/}
+        { /*conditional rendering: load or not*/}
         { this.props.Loading ?
           (
             <FaSpinner
-              className="fa-faSpinner"
-              animate="spin"
+              className="fa-spin"
               name="spinner"
             />
           ):
           (
-            <div className="loadButton">
+            <div 
+              onClick={this.props.onButtonClick} //inverted flow to parent Home
+              className="loadButton"
+            >
               <h3 className="loadButton--text">SEE MORE</h3>
             </div>
           )

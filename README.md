@@ -1,4 +1,4 @@
-# React - Redux: Master React from A to Z - Create your own NETFLIX
+# React / Redux: NETFLIX using API, Redux
 
 *April 2020*
 
@@ -14,10 +14,7 @@ See demo on [GitHub page](#).
 
 ### Concepts covered
 
-- Lifecycle of Components
-- Higher-order components (HOC): function that takes a component as parameter and that return
-another component
-- Decompose and prioritize components:
+**Decompose and prioritize components**
 
     App
 
@@ -35,7 +32,31 @@ another component
 
     ------Load Button / see more
 
-- xxx
+**Lifecycle of Components**
+
+
+**Higher-order components (HOC)**
+
+Function that takes a component as parameter and that return another component
+
+**When to use states**
+
+- Does the data come(s) from a parent component with props?
+- Does it stays unchanged during process?
+- Can it be calculated using another state or props from the component?
+
+=> 3xNO -> *usually* use states
+=> identify the best component(s) where the states have to 'live'
+
+**Why use React.Fragment**
+
+`<React.Fragment></React.Fragment>` or `<></>`: used if we do not begin with
+html or if we use invalid DOM in JSX:
+"Fragments let you group a list of children without adding extra nodes to the DOM."
+
+**Inverted data flow**
+
+Send data From children component to parent (ex: SearchBar, LoadingButton).
 
 
 ## How to use
@@ -62,11 +83,15 @@ See demo on [GitHub page](#).
 
 - [React Icons](https://react-icons.github.io/react-icons/#/)
 
-  `npm install react-icons --save`
+  `npm i react-icons --save`
 
 - [bootstrap](https://www.npmjs.com/package/bootstrap)
 
-  `npm i --save bootstrap`
+  `npm i bootstrap --save`
+
+  - [Axios](https://www.npmjs.com/package/axios)
+
+  `npm i axios --save`
 
 ## Useful links
 
@@ -80,5 +105,8 @@ See demo on [GitHub page](#).
 - [React Developer Tools Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 - [VSC: Reactjs code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
 - [Using index.js for Fun and Public Interfaces](https://alligator.io/react/index-js-public-interfaces/)
+- [ReactJS Inverse Data Flow in ES6](https://medium.com/@jtabach/reactjs-inverse-data-flow-in-es6-9d1c3c356be7)
+- [API TMDB (The Movie DataBase)](https://www.themoviedb.org/)
+- []()
 - []()
 - []()
