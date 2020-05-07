@@ -18,7 +18,7 @@ See demo on [GitHub page](#).
 
     App
 
-    ---Header (fixed)
+    ---Header
 
     ---Home page:
 
@@ -26,14 +26,29 @@ See demo on [GitHub page](#).
 
     ------Searchbar
 
-    ------Posters List (fixed)
+    ------Posters List
 
     ---------Poster
+
+    ------------Item
+
+    ---------------Header
+
+    ---------------HeaderDetails
+
+    ---------------Stars
+
+    ---------------Container
+
+    ---------------Actor List
+
+    ------------------Actor List
 
     ------Load Button / see more
 
 **Lifecycle of Components**
 
+![Schema: components lifecycle](./readme-img/lifecycle.png)
 
 **Higher-order components (HOC)**
 
