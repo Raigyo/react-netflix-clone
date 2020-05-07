@@ -48,7 +48,7 @@ See demo on [GitHub page](#).
 
 **Lifecycle of Components**
 
-![Schema: components lifecycle](./readme-img/lifecycle.png)
+![Schema: components lifecycle](./readme-img/react-lifecycle.png)
 
 **Higher-order components (HOC)**
 
