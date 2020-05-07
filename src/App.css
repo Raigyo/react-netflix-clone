@@ -14,6 +14,13 @@
   font-weight: normal;
   src: local("Wicked Scary Movie"), url("./fonts/WickedScaryMovie.woff") format("woff");
 }
+@font-face {
+  font-family: "Netflix";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Netflix"), url("./fonts/BebasNeue.woff") format("woff");
+}
+
 
 * {
   padding: 0;
@@ -24,13 +31,13 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: "Wicked Scary Movie", Helvetica, Arial, sans-serif !important;
+  font-family: "Netflix", Helvetica, Arial, sans-serif !important;
 }
 div {
   overflow: hidden;
 }
 h3 {
-  font-family: "28 Days Later" !important;
+  font-family: "Netflix" !important;
 }
 .app {
   display: flex;
@@ -42,3 +49,4 @@ h3 {
   color: #a81818;
   margin: 10rem auto;
 }
+

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Home } from './routes';
 import { Header } from './components';
 import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
+import CookieConsent from "react-cookie-consent";
 import './App.css';
 
 class App extends Component {
@@ -147,6 +148,18 @@ class App extends Component {
           onSearchClick={this.handleSearch}
           onButtonClick={this.loadMore}
         />
+        <CookieConsent
+          location="bottom"
+          buttonText="Understood"
+          cookieName="cookieAccept"
+          style={{ background: "#2B373B" }}
+          buttonStyle={{ color: "#4e503b", fontSize: "20px" }}
+          expires={150}
+        >
+        <span style={{ fontSize: "20px" }}>
+          This website uses cookies to enhance the user experience.{" "}
+        </span>
+        </CookieConsent>
       </div>
     );
   } //\render

@@ -111,6 +111,10 @@ See demo on [GitHub page](#).
 
   `npm i axios --save`
 
+- [React Cookie Consent](https://www.npmjs.com/package/react-cookie-consent)
+
+  `npm i react-cookie-consent`
+
 ## Useful links
 
 - [Udemy: Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)
