@@ -90,6 +90,8 @@ npm start
 ```
 Open the app using [http://localhost:3000/](http://localhost:3000/)
 
+**Warning: you have to rename *_config.js* by *config.js* and provide our own key for API TMDB**
+
 
 ### Online
 
