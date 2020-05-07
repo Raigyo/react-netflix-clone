@@ -103,11 +103,11 @@ See demo on [GitHub page](#).
 
   `npm i react-icons --save`
 
-- [bootstrap](https://www.npmjs.com/package/bootstrap)
+- [Bootstrap](https://www.npmjs.com/package/bootstrap)
 
   `npm i bootstrap --save`
 
-  - [Axios](https://www.npmjs.com/package/axios)
+- [Axios](https://www.npmjs.com/package/axios)
 
   `npm i axios --save`
 
