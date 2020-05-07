@@ -79,12 +79,41 @@ class App extends Component {
     return axios.get(url);
   };
 
+  //Search contact APi
+  searchMovie = () => {
+    const url =
+    `${API_URL}/search/movie?api_key=${API_KEY}&query=${this.state.searchText}&language=en`;
+    return axios.get(url);
+  };
+
+  //Onclick search
   handleSearch = (value) => {
-    //lanch research
+    try {
+      this.setState(
+        { loading: true, searchText: value, image: null },
+        async () => {
+          const {
+            data: { results, page, total_pages },
+          } = await this.searchMovie();
+          console.log("res", results);
+          this.setState({
+            movies: results,
+            loading: false,
+            activePage: page,
+            totalPages: total_pages,
+            image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+            mTitle: results[0].title,
+            mDesc: results[0].overview,
+          });
+        }
+      );
+    } catch (e) {
+      console.log("e", e);
+    }
     console.log("handleSearch", value);
   };
 
-  //Next page
+  //Click More: next page of movies
   loadMore = async () => {
     try {
       this.setState({ loading: true });
@@ -93,7 +122,7 @@ class App extends Component {
       } = await this.loadMovies();
       console.log("res", results);
       this.setState({
-        movies: [...this.state.movies, ...results],//array concat
+        movies: [...this.state.movies, ...results], //array concat
         loading: false,
         activePage: page,
         totalPages: total_pages,
