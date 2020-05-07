@@ -61,7 +61,8 @@ Function that takes a component as parameter and that return another component
 - Can it be calculated using another state or props from the component?
 
 => 3xNO -> *usually* use states
-=> identify the best component(s) where the states have to 'live'
+
+=> identify in which component(s) the states have to 'live'
 
 **Why use React.Fragment**
 
