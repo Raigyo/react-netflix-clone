@@ -79,7 +79,7 @@ class App extends Component {
     } catch (e) {
       console.log("e", e);
     }
-    console.log("handleSearch", value);
+    //console.log("handleSearch", value);
   };
 
   //Click More: next page of movies
@@ -110,6 +110,7 @@ class App extends Component {
         <div className="App">
           {/* badge state: number of movies displayed */}
           <Header badge={this.state.badge} />
+          {/* conditionnal: spinner or content */}
           {!this.state.image ? (
             <Spinner />
           ) : (
