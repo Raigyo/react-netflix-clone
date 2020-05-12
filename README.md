@@ -48,21 +48,21 @@ See demo on [GitHub page](#).
 
 **Decompose routing**
 
-  App
+    App
 
-  ---Header
+    ---Header
 
-  ---Details
+    ---Details
 
-  ------HeaderDetails
+    ------HeaderDetails
 
-  ---------Container
+    ---------Container
 
-  ---------Stars
+    ---------Stars
 
-  ------ActorList
+    ------ActorList
 
-  ---------Actors
+    ---------Actors
 
 **Lifecycle of Components**
 
