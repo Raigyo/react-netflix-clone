@@ -149,8 +149,7 @@ See demo on [GitHub page](#).
 - [React Developer Tools Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 - [VSC: Reactjs code snippets]
 (https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
-- [Using index.js for Fun and Public Interfaces]
-(https://alligator.io/react/index-js-public-interfaces/)
+- [Using index.js for Fun and Public Interfaces](https://alligator.io/react/index-js-public-interfaces/)
 - [ReactJS Inverse Data Flow in ES6](https://medium.com/@jtabach/reactjs-inverse-data-flow-in-es6-9d1c3c356be7)
 - [API TMDB (The Movie DataBase)](https://www.themoviedb.org/)
 - []()
