@@ -1,6 +1,6 @@
-# React / Redux: NETFLIX using API, Redux
+# React - Redux: Master React from A to Z - Create your own NETFLIX
 
-*April 2020*
+*April / May 2020*
 
 > 🔨 From Udemy
 '[Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)'.
@@ -45,6 +45,24 @@ See demo on [GitHub page](#).
     ------------------Actor List
 
     ------Load Button / see more
+
+**Decompose routing**
+
+App
+
+---Header
+
+---Details
+
+------HeaderDetails
+
+---------Container
+
+---------Stars
+
+------ActorList
+
+---------Actors
 
 **Lifecycle of Components**
 
