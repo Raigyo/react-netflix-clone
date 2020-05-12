@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from 'axios';
-import { Home } from './routes';
+import { Home, Details, NotFound } from "./routes";
 import { Header, Spinner } from './components';
 import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
 import CookieConsent from "react-cookie-consent";
@@ -129,6 +129,8 @@ class App extends Component {
                   />
                 )}
               />
+              <Route path="/:id" exact component={Details} />
+              <Route component={NotFound} />
             </Switch>
           )}
           <CookieConsent
