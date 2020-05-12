@@ -48,21 +48,21 @@ See demo on [GitHub page](#).
 
 **Decompose routing**
 
-App
+  App
 
----Header
+  ---Header
 
----Details
+  ---Details
 
-------HeaderDetails
+  ------HeaderDetails
 
----------Container
+  ---------Container
 
----------Stars
+  ---------Stars
 
-------ActorList
+  ------ActorList
 
----------Actors
+  ---------Actors
 
 **Lifecycle of Components**
 
@@ -132,6 +132,10 @@ See demo on [GitHub page](#).
 - [React Cookie Consent](https://www.npmjs.com/package/react-cookie-consent)
 
   `npm i react-cookie-consent`
+
+- [React Router Dom](https://www.npmjs.com/package/react-router-dom)
+
+  `npm i react-router-dom`
 
 ## Useful links
 
