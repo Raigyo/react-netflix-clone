@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FaSpinner } from 'react-icons/fa';
+import { Spinner } from './index';
 
 import '../css/LoadButton.css';
 
@@ -14,10 +14,7 @@ class LoadButton extends Component {
         { /*conditional rendering: load or not*/}
         { this.props.Loading ?
           (
-            <FaSpinner
-              className="fa-spin"
-              name="spinner"
-            />
+            <Spinner />
           ):
           (
             <div 

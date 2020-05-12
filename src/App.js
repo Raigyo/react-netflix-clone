@@ -1,52 +1,20 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import { Home } from './routes';
-import { Header } from './components';
+import { Header, Spinner } from './components';
 import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
 import CookieConsent from "react-cookie-consent";
 import './App.css';
 
 class App extends Component {
   state = {
-    loading: false,
-    movies: [
-      {
-        backdrop_path: "./images/Fast_large.jpg",
-        id: 475557,
-        overview:
-          "Dans les années 1980, à Gotham City, Arthur Fleck, un humoriste de stand-up raté, bascule dans la folie et devient le Joker.",
-        poster_path: "./images/Fast_small.jpg",
-        title: "Fast and Furious",
-      },
-      {
-        backdrop_path: "./images/Fast_large.jpg",
-        id: 475558,
-        overview:
-          "Dans les années 1980, à Gotham City, Arthur Fleck, un humoriste de stand-up raté, bascule dans la folie et devient le Joker.",
-        poster_path: "../images/Fast_small.jpg",
-        title: "Fast and Furious",
-      },
-      {
-        backdrop_path: "./images/Fast_large.jpg",
-        id: 475559,
-        overview:
-          "Dans les années 1980, à Gotham City, Arthur Fleck, un humoriste de stand-up raté, bascule dans la folie et devient le Joker.",
-        poster_path: "../images/Fast_small.jpg",
-        title: "Fast and Furious",
-      },
-      {
-        backdrop_path: "./images/Fast_large.jpg",
-        id: 475554,
-        overview:
-          "Dans les années 1980, à Gotham City, Arthur Fleck, un humoriste de stand-up raté, bascule dans la folie et devient le Joker.",
-        poster_path: "../images/Fast_small.jpg",
-        title: "Fast and Furious",
-      },
-    ],
+    loading: true,
+    movies: [],
     badge: 0,
-    image: "./images/Fast_large.jpg",
-    mTitle: "Title",
-    mDesc: "Lorem ipsum...",
+    image: null,
+    mTitle: "",
+    mDesc: "",
     activePage: 0,
     totalPages: 0,
     searchText: "",
@@ -134,33 +102,48 @@ class App extends Component {
     } catch (e) {
       console.log("error load more", e);
     }
-    // lancer une requette ici
-    console.log("load more");
   };
 
   render() {
     return (
-      <div className="App">
-        {/* badge state: number of movies displayed */}
-        <Header badge={this.state.badge} />
-        <Home
-          {...this.state}
-          onSearchClick={this.handleSearch}
-          onButtonClick={this.loadMore}
-        />
-        <CookieConsent
-          location="bottom"
-          buttonText="Understood"
-          cookieName="cookieAccept"
-          style={{ background: "#2B373B" }}
-          buttonStyle={{ color: "#4e503b", fontSize: "20px" }}
-          expires={150}
-        >
-        <span style={{ fontSize: "20px" }}>
-          This website uses cookies to enhance the user experience.{" "}
-        </span>
-        </CookieConsent>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          {/* badge state: number of movies displayed */}
+          <Header badge={this.state.badge} />
+          {!this.state.image ? (
+            <Spinner />
+          ) : (
+            <Switch>
+              {/*The exact param disables the partial matching for a route and makes
+              sure that it only returns the route if the path
+              is an EXACT match to the current url.*/}
+              <Route
+                path="/"
+                exact
+                render={() => (
+                  <Home
+                    {...this.state}
+                    onSearchClick={this.handleSearch}
+                    onButtonClick={this.loadMore}
+                  />
+                )}
+              />
+            </Switch>
+          )}
+          <CookieConsent
+            location="bottom"
+            buttonText="Understood"
+            cookieName="cookieAccept"
+            style={{ background: "#2B373B" }}
+            buttonStyle={{ color: "#4e503b", fontSize: "20px" }}
+            expires={150}
+          >
+            <span style={{ fontSize: "20px" }}>
+              This website uses cookies to enhance the user experience.{" "}
+            </span>
+          </CookieConsent>
+        </div>
+      </BrowserRouter>
     );
   } //\render
 }//\class App
