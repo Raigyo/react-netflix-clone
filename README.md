@@ -147,8 +147,7 @@ See demo on [GitHub page](#).
 - [ReactJS Higher Order Components Tutorial](https://www.codingame.com/playgrounds/8595/reactjs-higher-order-components-tutorial)
 - [React Developer Tools Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 - [React Developer Tools Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
-- [VSC: Reactjs code snippets]
-(https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
+- [VSC: Reactjs code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
 - [Using index.js for Fun and Public Interfaces](https://alligator.io/react/index-js-public-interfaces/)
 - [ReactJS Inverse Data Flow in ES6](https://medium.com/@jtabach/reactjs-inverse-data-flow-in-es6-9d1c3c356be7)
 - [API TMDB (The Movie DataBase)](https://www.themoviedb.org/)
