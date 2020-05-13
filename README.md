@@ -92,11 +92,21 @@ html or if we use invalid DOM in JSX:
 
 Send data From children component to parent (ex: SearchBar, LoadingButton).
 
-**React Router**
+**React Router (Route, Link, Switch)**
 
 When you need to navigate through a React application with multiple views,
 you’ll need a router to manage the URLs. React Router takes care of that,
 keeping your application UI and the URL in sync.
+
+**Redux**
+
+A Predictable State Container for JS Apps.
+
+![redux schema](./readme-img/redux-schema.png)
+
+See my watch about [Redux](https://docs.google.com/presentation/d/1EvizpkOZKV1wntQODdG3H05CArLIxwIG46INIvsqdDI/edit#slide=id.gc6f73a04f_0_0)
+
+[Playground](https://stephengrider.github.io/JSPlaygrounds/)
 
 ## How to use
 
@@ -114,7 +124,6 @@ npm start
 Open the app using [http://localhost:3000/](http://localhost:3000/)
 
 **Warning: you have to rename *_config.js* by *config.js* and provide your own key for API TMDB**
-
 
 ### Online
 
