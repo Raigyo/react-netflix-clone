@@ -1,4 +1,4 @@
-# React - Redux: Master React from A to Z - Create your own NETFLIX
+# React - Redux - Firebase: Master React from A to Z - Create your own NETFLIX
 
 *April / May 2020*
 
@@ -92,6 +92,11 @@ html or if we use invalid DOM in JSX:
 
 Send data From children component to parent (ex: SearchBar, LoadingButton).
 
+**React Router**
+
+When you need to navigate through a React application with multiple views,
+you’ll need a router to manage the URLs. React Router takes care of that,
+keeping your application UI and the URL in sync.
 
 ## How to use
 
@@ -151,6 +156,6 @@ See demo on [GitHub page](#).
 - [Using index.js for Fun and Public Interfaces](https://alligator.io/react/index-js-public-interfaces/)
 - [ReactJS Inverse Data Flow in ES6](https://medium.com/@jtabach/reactjs-inverse-data-flow-in-es6-9d1c3c356be7)
 - [API TMDB (The Movie DataBase)](https://www.themoviedb.org/)
-- []()
+- [Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - []()
 - []()
