@@ -108,6 +108,76 @@ See my watch about [Redux](https://docs.google.com/presentation/d/1EvizpkOZKV1wn
 
 [Playground](https://stephengrider.github.io/JSPlaygrounds/)
 
+**Exemple**
+
+```
+//Initial state
+const initialState = {
+  "name": "Vincent",
+  "age": 42
+}
+
+//Reducer (state, action)
+//Pure: always return a new state
+//We use one reducer, but we can use several reducers if needed
+const reducer = (state = initialState, action) => {
+  //If an action is dispatched
+  if(action.type === "INCREMENT_AGE"){
+    return {
+      "name": state.name,
+      "age": state.age + action.payload
+    }
+  }
+  if(action.type === "CHANGE_NAME"){
+    return {
+      "name": action.payload,
+      "age": state.age
+    }
+  }
+  //Return the new state to the store
+  return state;
+}
+
+//Store
+//There is only one store
+const store = Redux.createStore(reducer);
+
+//Value of global state
+store.getState()
+// => {"name":"Vincent","age":42}
+
+//Action 1 (it will display the state again)
+const action1 = {
+ type: "INCREMENT_AGE",
+  payload: 3
+}
+// => {"name":"Vincent","age":42}
+
+//Dispatch action1 to reducer
+store.dispatch(action1);
+// => "type":"INCREMENT_AGE","payload":3}
+
+//Value of new state in the store
+store.getState();
+// => {"name":"Vincent","age":45}
+
+//Action 2 (it will display the state again)
+const action2 = {
+  type: "CHANGE_NAME",
+  payload: "Daniel"
+}
+// => {"name":"Vincent","age":45}
+
+//Dispatch action2 to reducer
+store.dispatch(action2)
+// => {"type":"CHANGE_NAME","payload":"Daniel"}
+
+//Value of new state in the store
+store.getState();
+// => {"name":"Daniel","age":45}
+
+```
+
 ## How to use
 
 
