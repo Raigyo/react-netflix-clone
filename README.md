@@ -195,7 +195,7 @@ Higher-order component, connect components to Redux.
 that the connected component needs.
 - B: function mapDispatchToProps, is used for dispatching actions to the store.
 
-![redux-inspector capture](./readme-img/redux-inspector.png)
+![redux-inspector capture](./readme-img/chrome-redux-inspector.png)
 
 ## How to use
 
