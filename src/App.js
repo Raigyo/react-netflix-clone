@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from 'axios';
+import { Provider } from "react-redux";
 import { Home, Details, NotFound } from "./routes";
 import { Header, Spinner } from './components';
 import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
 import CookieConsent from "react-cookie-consent";
+import store from "./store";
 import './App.css';
 
 class App extends Component {
@@ -106,47 +108,49 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          {/* badge state: number of movies displayed */}
-          <Header badge={this.state.badge} />
-          {/* conditionnal: spinner or content */}
-          {!this.state.image ? (
-            <Spinner />
-          ) : (
-            <Switch>
-              {/*The exact param disables the partial matching for a route and makes
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className="App">
+            {/* badge state: number of movies displayed */}
+            <Header badge={this.state.badge} />
+            {/* conditionnal: spinner or content */}
+            {!this.state.image ? (
+              <Spinner />
+            ) : (
+              <Switch>
+                {/*The exact param disables the partial matching for a route and makes
               sure that it only returns the route if the path
               is an EXACT match to the current url.*/}
-              <Route
-                path="/"
-                exact
-                render={() => (
-                  <Home
-                    {...this.state}
-                    onSearchClick={this.handleSearch}
-                    onButtonClick={this.loadMore}
-                  />
-                )}
-              />
-              <Route path="/:id" exact component={Details} />
-              <Route component={NotFound} />
-            </Switch>
-          )}
-          <CookieConsent
-            location="bottom"
-            buttonText="Understood"
-            cookieName="cookieAccept"
-            style={{ background: "#2B373B" }}
-            buttonStyle={{ color: "#4e503b", fontSize: "20px" }}
-            expires={150}
-          >
-            <span style={{ fontSize: "20px" }}>
-              This website uses cookies to enhance the user experience.{" "}
-            </span>
-          </CookieConsent>
-        </div>
-      </BrowserRouter>
+                <Route
+                  path="/"
+                  exact
+                  render={() => (
+                    <Home
+                      {...this.state}
+                      onSearchClick={this.handleSearch}
+                      onButtonClick={this.loadMore}
+                    />
+                  )}
+                />
+                <Route path="/:id" exact component={Details} />
+                <Route component={NotFound} />
+              </Switch>
+            )}
+            <CookieConsent
+              location="bottom"
+              buttonText="Understood"
+              cookieName="cookieAccept"
+              style={{ background: "#2B373B" }}
+              buttonStyle={{ color: "#4e503b", fontSize: "20px" }}
+              expires={150}
+            >
+              <span style={{ fontSize: "20px" }}>
+                This website uses local storage to enhance the user experience.{" "}
+              </span>
+            </CookieConsent>
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   } //\render
 }//\class App

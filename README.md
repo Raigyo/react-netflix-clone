@@ -64,6 +64,8 @@ See demo on [GitHub page](#).
 
     ---------Actors
 
+**Decompose Redux**
+
 **Lifecycle of Components**
 
 ![Schema: components lifecycle](./readme-img/react-lifecycle.png)
@@ -106,26 +108,27 @@ A Predictable State Container for JS Apps.
 
 See my watch about [Redux](https://docs.google.com/presentation/d/1EvizpkOZKV1wntQODdG3H05CArLIxwIG46INIvsqdDI/edit#slide=id.gc6f73a04f_0_0)
 
-[Playground](https://stephengrider.github.io/JSPlaygrounds/)
+[Playground to thest the following exemple](https://stephengrider.github.io/JSPlaygrounds/)
 
-**Exemple**
+*Exemple*
 
 ```
+//REDUCER (state, action)
+//Pure: always return a new state
+//We use one reducer, but we can use several reducers if needed
+
 //Initial state
 const initialState = {
   "name": "Vincent",
   "age": 42
 }
 
-//Reducer (state, action)
-//Pure: always return a new state
-//We use one reducer, but we can use several reducers if needed
 const reducer = (state = initialState, action) => {
   //If an action is dispatched
   if(action.type === "INCREMENT_AGE"){
     return {
       "name": state.name,
-      "age": state.age + action.payload
+      "age": state.age + action.payload //payload = data emited
     }
   }
   if(action.type === "CHANGE_NAME"){
@@ -138,7 +141,7 @@ const reducer = (state = initialState, action) => {
   return state;
 }
 
-//Store
+//STORE
 //There is only one store
 const store = Redux.createStore(reducer);
 
@@ -146,7 +149,7 @@ const store = Redux.createStore(reducer);
 store.getState()
 // => {"name":"Vincent","age":42}
 
-//Action 1 (it will display the state again)
+//ACTION 1 (it will display the state again)
 const action1 = {
  type: "INCREMENT_AGE",
   payload: 3
@@ -161,7 +164,7 @@ store.dispatch(action1);
 store.getState();
 // => {"name":"Vincent","age":45}
 
-//Action 2 (it will display the state again)
+//ACTION 2 (it will display the state again)
 const action2 = {
   type: "CHANGE_NAME",
   payload: "Daniel"
@@ -178,8 +181,23 @@ store.getState();
 
 ```
 
-## How to use
+**Action creators**
 
+Functions that take arguments and return an action.
+
+**Connect**
+
+Higher-order component, connect components to Redux.
+
+`connect (A, B)(Component)`
+
+- A: function mapStateToProps, is used for selecting the part of the data from the store
+that the connected component needs.
+- B: function mapDispatchToProps, is used for dispatching actions to the store.
+
+![redux-inspector capture](./readme-img/redux-inspector)
+
+## How to use
 
 ### Localy
 
@@ -221,6 +239,14 @@ See demo on [GitHub page](#).
 
   `npm i react-router-dom`
 
+- [Redux](https://www.npmjs.com/package/redux)
+
+  `npm i redux`
+
+- [React Redux](https://www.npmjs.com/package/react-redux)
+
+  `npm i react-redux`
+
 ## Useful links
 
 - [Udemy: Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)
@@ -236,5 +262,7 @@ See demo on [GitHub page](#).
 - [ReactJS Inverse Data Flow in ES6](https://medium.com/@jtabach/reactjs-inverse-data-flow-in-es6-9d1c3c356be7)
 - [API TMDB (The Movie DataBase)](https://www.themoviedb.org/)
 - [Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- [Redux Developer Tools Chrome]https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+- [Redux Developer Tools Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/)
 - []()
 - []()
