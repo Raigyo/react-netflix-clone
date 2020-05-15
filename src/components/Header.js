@@ -28,7 +28,7 @@ class HeaderComponent extends Component {
 //A: mapStateToProps
 const mapStateToProps = (state) => {
   return {
-    badge: state.movies.number,
+    badge: state.movies.number,//total number of movies in favourite
   };
 };//\mapStateToProps
 
@@ -40,6 +40,8 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+
+//Action dispatching
 //'Hack': we export as component Header but the name of the class of component is HeaderComponent
 const Header = connect(mapStateToProps, mapDispatchToProps)(HeaderComponent);
 
