@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import { Provider } from "react-redux";
-import { Home, Details, NotFound } from "./routes";
+import { Home, Details, NotFound, MoviePlayer } from "./routes";
 import { Header, Spinner } from './components';
 import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
 import CookieConsent from "react-cookie-consent";
@@ -29,7 +29,7 @@ class App extends Component {
       const {
         data: { results, page, total_pages },
       } = await this.loadMovies();
-      console.log("res", results);
+      //console.log("res", results);
       this.setState({
         movies: results,
         loading: false,
@@ -66,7 +66,7 @@ class App extends Component {
           const {
             data: { results, page, total_pages },
           } = await this.searchMovie();
-          console.log("res", results);
+          //console.log("res", results);
           this.setState({
             movies: results,
             loading: false,
@@ -132,6 +132,8 @@ class App extends Component {
                     />
                   )}
                 />
+                <Route path="/player" exact component={MoviePlayer} />
+                <Route path="/player/:id" exact component={MoviePlayer} />
                 <Route path="/:id" exact component={Details} />
                 <Route component={NotFound} />
               </Switch>

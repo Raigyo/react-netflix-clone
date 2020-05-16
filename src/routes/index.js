@@ -4,3 +4,4 @@ you can effectively create explicit public interfaces for your React modules.*/
 export * from './Home';
 export * from "./Details";
 export * from "./NotFound";
+export * from "./MoviePlayer";

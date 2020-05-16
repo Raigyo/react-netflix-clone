@@ -13,5 +13,5 @@ const divStyle = {
   flexDirection: "row",
   justifyContent: "center",
 };
-console.log("Not Found");
+//console.log("Not Found");
 export { NotFound };

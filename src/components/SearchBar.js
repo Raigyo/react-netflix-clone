@@ -25,13 +25,10 @@ class SearchBar extends Component {
             onChange={this.handleChange}
           />
           <div
-            onClick = {() => this.props.onSearchClick(value)}//inverted flow to parent Home
-            className="searchBar--submit">
-          </div>
-          <FaSearch
-            className="searchIcon"
-            name="search"
-          />
+            onClick={() => this.props.onSearchClick(value)} //inverted flow to parent Home
+            className="searchBar--submit"
+          ></div>
+          <FaSearch className="searchIcon" name="search" />
         </div>
       </div>
     );

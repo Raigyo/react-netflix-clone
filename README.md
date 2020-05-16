@@ -14,7 +14,7 @@ See demo on [GitHub page](#).
 
 ### Concepts covered
 
-**Decompose and prioritize components**
+**Decompose and prioritize main components**
 
     App
 
@@ -45,6 +45,20 @@ See demo on [GitHub page](#).
     ------------------Actor List
 
     ------Load Button / see more
+
+**Decompose and prioritize Player Components**
+
+    App
+
+    ---Header
+
+    ---MoviePlayer
+
+    ------VideoPlayer
+
+    ------MvPlayerList
+
+    ---------MvPlayerListItem
 
 **Decompose routing**
 
@@ -151,8 +165,8 @@ store.getState()
 
 //ACTION 1 (it will display the state again)
 const action1 = {
- type: "INCREMENT_AGE",
-  payload: 3
+ type: "INCREMENT_AGE", //type is mandatory
+ payload: 3 //properties can have any name
 }
 // => {"name":"Vincent","age":42}
 
@@ -247,6 +261,12 @@ See demo on [GitHub page](#).
 
   `npm i react-redux`
 
+- [ReactPlayer](https://www.npmjs.com/package/react-player)
+
+  `npm i react-player`
+
+
+
 ## Useful links
 
 - [Udemy: Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)
@@ -262,7 +282,7 @@ See demo on [GitHub page](#).
 - [ReactJS Inverse Data Flow in ES6](https://medium.com/@jtabach/reactjs-inverse-data-flow-in-es6-9d1c3c356be7)
 - [API TMDB (The Movie DataBase)](https://www.themoviedb.org/)
 - [Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [Redux Developer Tools Chrome]https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+- [Redux Developer Tools Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
 - [Redux Developer Tools Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/)
 - []()
 - []()

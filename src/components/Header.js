@@ -17,7 +17,7 @@ class HeaderComponent extends Component {
         <Link to={{ pathname: "/" }}>
           <FaFilm className="header--movie" name="film" />
         </Link>
-        <h3>Netflix</h3>
+        <h3>Netflix ;-)</h3>
         <FaHeart className="header--heart" name="heart" />
         <div className="header--badge">{this.props.badge}</div>
       </div>
