@@ -19,6 +19,6 @@ const ActorList = props => {
       <div className="actorList--grid">{renderActor()}</div>
     </div>
   )
-}
+}//\const ActorList
 
 export { ActorList };

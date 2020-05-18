@@ -29,7 +29,7 @@ class HomeComponent extends Component {
       </div>
     );
   }
-}
+}//\class HomeComponent
 
 const mapStateToProps = (state) => {
   return {

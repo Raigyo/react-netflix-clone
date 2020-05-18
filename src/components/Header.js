@@ -18,12 +18,14 @@ class HeaderComponent extends Component {
           <FaFilm className="header--movie" name="film" />
         </Link>
         <h3>Netflix ;-)</h3>
-        <FaHeart className="header--heart" name="heart" />
+        <Link to={{ pathname: "/player" }}>
+          <FaHeart className="header--heart" name="heart" />
+        </Link>
         <div className="header--badge">{this.props.badge}</div>
       </div>
     );
   } //\render
-}//\class Header
+}//\class HeaderComponent
 
 //A: mapStateToProps
 const mapStateToProps = (state) => {

@@ -9,6 +9,6 @@ const Spinner = (props) => {
       <FaSpinner className="fa-spin" name="spinner" />
     </div>
   );
-};
+};//\const Spinner
 
 export { Spinner };

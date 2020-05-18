@@ -43,6 +43,6 @@ class PosterList extends Component {
       </div>
     );
   }
-}
+}//\class PosterList
 
 export { PosterList };

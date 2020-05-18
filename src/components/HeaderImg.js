@@ -16,6 +16,6 @@ class HeaderImg extends Component {
       </div>
     );
   }
-}
+}//\class HeaderImg
 
 export { HeaderImg };

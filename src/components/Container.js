@@ -8,7 +8,7 @@ const Container = (props) => (
       <h3 className="container--title">{props.content}</h3>
     </div>
 
-);
+);//\const Container
 
 
 export {Container};

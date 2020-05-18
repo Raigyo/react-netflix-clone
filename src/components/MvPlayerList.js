@@ -33,6 +33,6 @@ class MvPlayerList extends Component {
       </div>
     );
   }
-}
+}//\class MvPlayerList
 
 export {MvPlayerList};

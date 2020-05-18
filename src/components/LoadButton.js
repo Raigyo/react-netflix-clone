@@ -28,6 +28,6 @@ class LoadButton extends Component {
       </>
     )
   }
-}
+}//\class LoadButton
 
 export {LoadButton};

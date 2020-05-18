@@ -23,6 +23,6 @@ const Stars = (props) => {
       {renderStars2()}
     </div>
   );
-};
+};//\const Stars
 
 export { Stars };

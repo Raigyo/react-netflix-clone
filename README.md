@@ -80,7 +80,7 @@ See demo on [GitHub page](#).
 
 **- Decompose Redux**
 
-**- Lifecycle of Components**
+**- State and Lifecycle of Components**
 
 ![Schema: components lifecycle](./readme-img/react-lifecycle.png)
 
@@ -266,6 +266,12 @@ See demo on [GitHub page](#).
 
   `npm i react-player`
 
+- [Lodash](https://www.npmjs.com/package/lodash)
+
+Provides utility functions for common programming tasks using the functional programming paradigm.
+
+  `npm i lodash`
+
 ## Useful links
 
 - [Udemy: Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)
@@ -283,5 +289,5 @@ See demo on [GitHub page](#).
 - [ReactJS Inverse Data Flow in ES6](https://medium.com/@jtabach/reactjs-inverse-data-flow-in-es6-9d1c3c356be7)
 - [API TMDB (The Movie DataBase)](https://www.themoviedb.org/)
 - [Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- []()
+- [10 Lodash functions everyone should know](https://medium.com/voobans-tech-stories/10-lodash-functions-everyone-should-know-334b372aec5d)
 - []()

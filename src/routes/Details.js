@@ -77,6 +77,6 @@ class Details extends Component {
       </div>
     );
   }
-}
+}//\class Details
 
 export { Details };

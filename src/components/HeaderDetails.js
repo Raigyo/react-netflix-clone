@@ -63,6 +63,6 @@ class HeaderDetails extends Component {
       </div>
     );
   }
-}
+}//\class HeaderDetails
 
 export { HeaderDetails };

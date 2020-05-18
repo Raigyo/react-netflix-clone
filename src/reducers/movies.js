@@ -37,4 +37,4 @@ export const movieReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+}//\const movieReducer

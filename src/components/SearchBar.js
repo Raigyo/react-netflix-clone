@@ -33,6 +33,6 @@ class SearchBar extends Component {
       </div>
     );
   }
-}
+}//\class SearchBar
 
 export { SearchBar };
