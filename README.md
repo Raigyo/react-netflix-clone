@@ -1,14 +1,17 @@
 # React - Redux - Firebase: Master React from A to Z - Create your own NETFLIX
 
+![react-redux logo](./readme-img/react-redux-logo.png)
+
 *April / May 2020*
 
-> 🔨 From Udemy
+> 🔨 All React in Depth from scratch, with Redux, React Router DOM, Firebase, Paypal, React Player,
+themoviedb. From Udemy
 '[Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)'.
 
 See demo on [GitHub page](#).
 
-![react-redux logo](./readme-img/react-redux-logo.png)
 
+![capture app](./readme-img/capture-app1.jpg)
 
 ## About
 
