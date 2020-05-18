@@ -271,7 +271,7 @@ See demo on [GitHub page](#).
 
 - [Lodash](https://www.npmjs.com/package/lodash)
 
-Provides utility functions for common programming tasks using the functional programming paradigm.
+  Provides utility functions for common programming tasks using the functional programming paradigm.
 
   `npm i lodash`
 
