@@ -4,6 +4,7 @@
 
 config.js
 firebase-config.js
+Payment.js
 
 # dependencies
 /node_modules

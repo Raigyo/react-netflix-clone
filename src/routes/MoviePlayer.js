@@ -4,46 +4,27 @@ import _ from "lodash";
 import { VideoPlayer, MvPlayerList, Spinner } from "../components/";
 import { API_KEY, API_URL, IMAGE_BASE_URL, BACKDROP_SIZE } from '../config';
 import { calcTime } from '../utils/helpers';
+import { renderLogin } from "../utils/helpers";
 
 import "../css/MoviePlayer.css";
 
 let newMovies = [];
 
+const flag = renderLogin();
+
 class MoviePlayer extends Component {
   state = {
-    movies: [
-      {
-        duration: "2h 9m",
-        id: 42967,
-        imageUrl: "./images/Fast_large.jpg",
-        position: 1,
-        title: "Spider-man : Far from home",
-        videoUrl:
-          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      },
-      {
-        duration: "2h 9m",
-        id: 42968,
-        imageUrl: "./images/Fast_large.jpg",
-        position: 1,
-        title: "Spider-man : Far from home",
-        videoUrl:
-          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      },
-    ],
-    selectedMovie: {
-      duration: "2h 9m",
-      id: 42967,
-      imageUrl: "./images/Fast_large.jpg",
-      position: 1,
-      title: "Spider-man : Far from home",
-      videoUrl:
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    },
+    movies: [],
+    selectedMovie: [],
     loading: true,
+    flag: flag
   };
 
   async componentDidMount() {
+    if (!this.state.flag) {
+      this.props.history.push({ pathname: "/login" });
+      return;
+    }
     const oldMovies = JSON.parse(localStorage.getItem("movies"));
     const results = await this.getNewMovies(oldMovies);
     newMovies = oldMovies.map((oldMovie, index) => {

@@ -4,8 +4,8 @@
 
 *April / May 2020*
 
-> 🔨 All React in Depth from scratch, with Redux, React Router DOM, Firebase, Paypal, React Player,
-themoviedb. From Udemy
+> 🔨 All React in Depth from scratch, with Redux, React Router DOM, Firebase, Paypal (Sand Box),
+React Player, themoviedb. From Udemy
 '[Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)'.
 
 See demo on [GitHub page](#).
@@ -286,11 +286,15 @@ See demo on [GitHub page](#).
 
 - [Bootstrap](https://www.npmjs.com/package/bootstrap)
 
-`npm i bootstrap`
+  `npm i bootstrap`
 
 - [Reactstrap](https://www.npmjs.com/package/reactstrap)
 
-`npm i reactstrap`
+  `npm i reactstrap`
+
+- [React Paypal Express Checkout](https://www.npmjs.com/package/react-paypal-express-checkout)
+
+  `npm i react-paypal-express-checkout`
 
 ## Useful links
 
@@ -311,3 +315,5 @@ See demo on [GitHub page](#).
 - [Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - [10 Lodash functions everyone should know](https://medium.com/voobans-tech-stories/10-lodash-functions-everyone-should-know-334b372aec5d)
 - [Reactstrap](https://reactstrap.github.io/)
+- [Developer tools and resources to integrate PayPal Commerce Platform](https://developer.paypal.com/home/)
+- [Sandbox Paypal](https://www.sandbox.paypal.com/myaccount/summary)

@@ -3,6 +3,9 @@ import axios from "axios";
 
 import { Spinner, HeaderDetails, ActorList } from "../components";
 import { API_URL, API_KEY } from "../config";
+import { renderLogin } from "../utils/helpers";
+
+const flag = renderLogin();
 
 
 class Details extends Component {
@@ -15,11 +18,16 @@ class Details extends Component {
     revenue: "",
     runtime: "",
     status: "",
-    vote: ""
+    vote: "",
+    flag: flag
   }
 
   async componentDidMount() {
     try {
+      if (!this.state.flag) {
+        this.props.history.push({ pathname: "/login" });
+        return;
+      }
       const movieId = this.props.match.params.id; /* var from url */
       const url = `${API_URL}/movie/${movieId}?api_key=${API_KEY}&language=en`;
       const {
