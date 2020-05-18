@@ -14,7 +14,7 @@ See demo on [GitHub page](#).
 
 ### Concepts covered
 
-**Decompose and prioritize main components**
+**- Decompose and prioritize main components**
 
     App
 
@@ -46,7 +46,7 @@ See demo on [GitHub page](#).
 
     ------Load Button / see more
 
-**Decompose and prioritize Player Components**
+**- Decompose and prioritize Player Components**
 
     App
 
@@ -60,7 +60,7 @@ See demo on [GitHub page](#).
 
     ---------MvPlayerListItem
 
-**Decompose routing**
+**- Decompose routing**
 
     App
 
@@ -78,17 +78,17 @@ See demo on [GitHub page](#).
 
     ---------Actors
 
-**Decompose Redux**
+**- Decompose Redux**
 
-**Lifecycle of Components**
+**- Lifecycle of Components**
 
 ![Schema: components lifecycle](./readme-img/react-lifecycle.png)
 
-**Higher-order components (HOC)**
+**- Higher-order components (HOC)**
 
 Function that takes a component as parameter and that return another component
 
-**When to use states**
+**- When to use states**
 
 - Does the data come(s) from a parent component with props?
 - Does it stays unchanged during process?
@@ -98,23 +98,23 @@ Function that takes a component as parameter and that return another component
 
 => identify in which component(s) the states have to 'live'
 
-**Why use React.Fragment**
+**- Why use React.Fragment**
 
 `<React.Fragment></React.Fragment>` or `<></>`: used if we do not begin with
 html or if we use invalid DOM in JSX:
 "Fragments let you group a list of children without adding extra nodes to the DOM."
 
-**Inverted data flow**
+**- Inverted data flow**
 
 Send data From children component to parent (ex: SearchBar, LoadingButton).
 
-**React Router (Route, Link, Switch)**
+**- React Router (Route, Link, Switch)**
 
 When you need to navigate through a React application with multiple views,
 you’ll need a router to manage the URLs. React Router takes care of that,
 keeping your application UI and the URL in sync.
 
-**Redux**
+**- Redux**
 
 A Predictable State Container for JS Apps.
 
@@ -199,7 +199,7 @@ store.getState();
 
 ```
 
-**Redux: Connect**
+**- Redux: Connect**
 
 Higher-order component, connect components to Redux.
 
@@ -265,8 +265,6 @@ See demo on [GitHub page](#).
 - [ReactPlayer](https://www.npmjs.com/package/react-player)
 
   `npm i react-player`
-
-
 
 ## Useful links
 
