@@ -122,7 +122,7 @@ A Predictable State Container for JS Apps.
 
 See my watch about [Redux](https://docs.google.com/presentation/d/1EvizpkOZKV1wntQODdG3H05CArLIxwIG46INIvsqdDI/edit#slide=id.gc6f73a04f_0_0)
 
-[Playground to thest the following exemple](https://stephengrider.github.io/JSPlaygrounds/)
+[Playground to test the following exemple](https://stephengrider.github.io/JSPlaygrounds/)
 
 *Exemple*
 
@@ -163,6 +163,9 @@ const store = Redux.createStore(reducer);
 store.getState()
 // => {"name":"Vincent","age":42}
 
+//ACTION CREATORS
+//Functions that take arguments and return an action.
+
 //ACTION 1 (it will display the state again)
 const action1 = {
  type: "INCREMENT_AGE", //type is mandatory
@@ -189,17 +192,14 @@ const action2 = {
 store.dispatch(action2)
 // => {"type":"CHANGE_NAME","payload":"Daniel"}
 
+//NEW STATE
 //Value of new state in the store
 store.getState();
 // => {"name":"Daniel","age":45}
 
 ```
 
-**Action creators**
-
-Functions that take arguments and return an action.
-
-**Connect**
+**Redux: Connect**
 
 Higher-order component, connect components to Redux.
 
@@ -223,6 +223,7 @@ Then:
 npm install
 npm start
 ```
+
 Open the app using [http://localhost:3000/](http://localhost:3000/)
 
 **Warning: you have to rename *_config.js* by *config.js* and provide your own key for API TMDB**
@@ -277,12 +278,12 @@ See demo on [GitHub page](#).
 - [ReactJS Higher Order Components Tutorial](https://www.codingame.com/playgrounds/8595/reactjs-higher-order-components-tutorial)
 - [React Developer Tools Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 - [React Developer Tools Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+- [Redux Developer Tools Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+- [Redux Developer Tools Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/)
 - [VSC: Reactjs code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
 - [Using index.js for Fun and Public Interfaces](https://alligator.io/react/index-js-public-interfaces/)
 - [ReactJS Inverse Data Flow in ES6](https://medium.com/@jtabach/reactjs-inverse-data-flow-in-es6-9d1c3c356be7)
 - [API TMDB (The Movie DataBase)](https://www.themoviedb.org/)
 - [Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [Redux Developer Tools Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
-- [Redux Developer Tools Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/)
 - []()
 - []()
