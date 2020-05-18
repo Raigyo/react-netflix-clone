@@ -130,15 +130,15 @@ See my watch about [Redux](https://docs.google.com/presentation/d/1EvizpkOZKV1wn
 *Exemple*
 
 ```
-//REDUCER (state, action)
-//Pure: always return a new state
-//We use one reducer, but we can use several reducers if needed
-
 //Initial state
 const initialState = {
   "name": "Vincent",
   "age": 42
 }
+
+//REDUCER (state, action)
+//Pure: always return a new state
+//We use one reducer, but we can use several reducers if needed
 
 const reducer = (state = initialState, action) => {
   //If an action is dispatched
@@ -169,7 +169,7 @@ store.getState()
 //ACTION CREATORS
 //Functions that take arguments and return an action.
 
-//ACTION 1 (it will display the state again)
+//Action 1 (it will display the state again)
 const action1 = {
  type: "INCREMENT_AGE", //type is mandatory
  payload: 3 //properties can have any name
@@ -180,11 +180,12 @@ const action1 = {
 store.dispatch(action1);
 // => "type":"INCREMENT_AGE","payload":3}
 
+//New state
 //Value of new state in the store
 store.getState();
 // => {"name":"Vincent","age":45}
 
-//ACTION 2 (it will display the state again)
+//Action 2 (it will display the state again)
 const action2 = {
   type: "CHANGE_NAME",
   payload: "Daniel"
@@ -195,7 +196,7 @@ const action2 = {
 store.dispatch(action2)
 // => {"type":"CHANGE_NAME","payload":"Daniel"}
 
-//NEW STATE
+//New state
 //Value of new state in the store
 store.getState();
 // => {"name":"Daniel","age":45}
