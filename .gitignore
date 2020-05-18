@@ -3,6 +3,7 @@
 #API
 
 config.js
+firebase-config.js
 
 # dependencies
 /node_modules

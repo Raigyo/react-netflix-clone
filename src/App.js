@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import { Provider } from "react-redux";
-import { Home, Details, NotFound, MoviePlayer } from "./routes";
+import { Home, Details, NotFound, MoviePlayer, Login } from "./routes";
 import { Header, Spinner } from './components';
 import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
+import { initFirebase } from "./utils/firebase-config";
 import CookieConsent from "react-cookie-consent";
 import store from "./store";
+
 import './App.css';
 
 class App extends Component {
@@ -25,7 +27,7 @@ class App extends Component {
   //Load data from API/Update states
   async componentDidMount() {
     try {
-      //initFirebase();
+      initFirebase();
       const {
         data: { results, page, total_pages },
       } = await this.loadMovies();
@@ -134,6 +136,7 @@ class App extends Component {
                 />
                 <Route path="/player" exact component={MoviePlayer} />
                 <Route path="/player/:id" exact component={MoviePlayer} />
+                <Route path="/login" exact component={Login} />
                 <Route path="/:id" exact component={Details} />
                 <Route component={NotFound} />
               </Switch>

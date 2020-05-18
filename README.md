@@ -276,6 +276,22 @@ See demo on [GitHub page](#).
 
   `npm i lodash`
 
+- [Firebase](https://www.npmjs.com/package/firebase)
+
+  `npm i firebase`
+
+- [FirebaseUI React Components](https://www.npmjs.com/package/react-firebaseui)
+
+  `npm i react-firebaseui`
+
+- [Bootstrap](https://www.npmjs.com/package/bootstrap)
+
+`npm i bootstrap`
+
+- [Reactstrap](https://www.npmjs.com/package/reactstrap)
+
+`npm i reactstrap`
+
 ## Useful links
 
 - [Udemy: Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)
@@ -294,4 +310,4 @@ See demo on [GitHub page](#).
 - [API TMDB (The Movie DataBase)](https://www.themoviedb.org/)
 - [Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - [10 Lodash functions everyone should know](https://medium.com/voobans-tech-stories/10-lodash-functions-everyone-should-know-334b372aec5d)
-- []()
+- [Reactstrap](https://reactstrap.github.io/)
