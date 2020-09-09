@@ -36,7 +36,7 @@ class PosterList extends Component {
   render() {
     return (
       <div className="posterList">
-        <h3 className="posterList--title">POPULAR MOVIES</h3>
+        <h3 className="posterList--title">MOVIES LIST</h3>
         <div className="posterList--grid">
           {this.renderPoster()}
         </div>

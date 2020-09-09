@@ -5,11 +5,17 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getNumber } from "../actions/movie";
 
+import {withRouter} from 'react-router-dom';
 import '../css/Header.css';
 
 class HeaderComponent extends Component {
+
   componentDidMount() {
       this.props.getNumber();
+  }
+
+  nextPath(path) {
+    this.props.history.push(path);
   }
   render() {
     return (
@@ -45,6 +51,6 @@ const mapDispatchToProps = (dispatch) => {
 
 //Action dispatching
 //'Hack': we export as component Header but the name of the class of component is HeaderComponent
-const Header = connect(mapStateToProps, mapDispatchToProps)(HeaderComponent);
+const Header = connect(mapStateToProps, mapDispatchToProps)(withRouter(HeaderComponent));
 
 export { Header };

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import _ from "lodash";
+import firebase from 'firebase';
 import { VideoPlayer, MvPlayerList, Spinner } from "../components/";
 import { API_KEY, API_URL, IMAGE_BASE_URL, BACKDROP_SIZE } from '../config';
 import { calcTime } from '../utils/helpers';
@@ -25,38 +26,56 @@ class MoviePlayer extends Component {
       this.props.history.push({ pathname: "/login" });
       return;
     }
+    setTimeout(() => {
+      const user = firebase.auth().currentUser;
+      let dbRef;
+      if(user){
+        dbRef = firebase.database().ref(`users/${user.uid}`);
+        dbRef.on('value', async snapshot => {
+          const data = snapshot.val();
+          console.log('data', data);
+        })
+      }
+    }, 3000);
+
     const oldMovies = JSON.parse(localStorage.getItem("movies"));
-    const results = await this.getNewMovies(oldMovies);
-    newMovies = oldMovies.map((oldMovie, index) => {
-      return {
-        id: oldMovie.id,
-        position: index + 1,
-        title: oldMovie.title,
-        duration: results[index],
-        imageUrl: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${oldMovie.backdrop_path}`,
-        videoUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      };
-    });
-    const id = this.props.match.params.id;
-    if (id){//id or not
-      const selectedMovie = this.getSelectedMovie(newMovies, id);
+    if (Array.isArray(oldMovies) && oldMovies.length) {//check if array is empty
+      const results = await this.getNewMovies(oldMovies);
+      newMovies = oldMovies.map((oldMovie, index) => {
+        return {
+          id: oldMovie.id,
+          position: index + 1,
+          title: oldMovie.title,
+          duration: results[index],
+          imageUrl: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${oldMovie.backdrop_path}`,
+          videoUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        };
+      });
+      const id = this.props.match.params.id;
+      if (id){//id or not
+        const selectedMovie = this.getSelectedMovie(newMovies, id);
+          this.setState({
+            loading: false,
+            movies: [...newMovies],
+            selectedMovie,
+          });
+      } else {
+        const selectedMovie = newMovies[0];
         this.setState({
           loading: false,
           movies: [...newMovies],
           selectedMovie,
         });
-    } else {
-      const selectedMovie = newMovies[0];
+        this.props.history.push({
+          pathname: `/player/${selectedMovie.id}`,
+        });
+      }
+    } else {//empty
       this.setState({
         loading: false,
-        movies: [...newMovies],
-        selectedMovie,
-      });
-      this.props.history.push({
-        pathname: `/player/${selectedMovie.id}`,
       });
     }
-  }
+  }//\componentDidMount
 
   componentDidUpdate(prevProps) {
     //console.log('component did update');
@@ -66,7 +85,7 @@ class MoviePlayer extends Component {
         const selectedMovie = this.getSelectedMovie(newMovies, id);
         this.setState({ selectedMovie });
     }
-  }
+  }//\componentDidUpdate
 
   getSelectedMovie = (movies, movieId) => {
     const selectedMovie = _.find(movies, { id: parseInt(movieId, 10) });
@@ -106,14 +125,16 @@ class MoviePlayer extends Component {
 
   //We make a new array with movies from local storage
   getNewMovies = async (oldMovies) => {
-    let promises = [];
-    for (let i = 0; i < oldMovies.length; i++) {
-      const element = oldMovies[i];
-      const id = element.id;
-      const time = await this.getTime(id);
-      promises.push(calcTime(time));
+    if (Array.isArray(oldMovies) && oldMovies.length) {//check if array is empty
+      let promises = [];
+      for (let i = 0; i < oldMovies.length; i++) {
+        const element = oldMovies[i];
+        const id = element.id;
+        const time = await this.getTime(id);
+        promises.push(calcTime(time));
+      }
+      return Promise.all(promises);
     }
-    return Promise.all(promises);
   };
 
   render() {

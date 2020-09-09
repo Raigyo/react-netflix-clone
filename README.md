@@ -8,7 +8,10 @@
 React Player, themoviedb. From Udemy
 '[Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)'.
 
-See demo on [GitHub page](#).
+
+Note: some bugs remain.
+
+For the demonstration, the mandatory signup and the paypal checkout have been removed.
 
 
 ![capture app](./readme-img/capture-app1.jpg)
@@ -219,7 +222,7 @@ that the connected component needs.
 
 ### Localy
 
-Clone, the [local-version](https://github.com/Raigyo/three-js/tree/local-version) branch.
+Clone,
 
 Then:
 
@@ -229,6 +232,15 @@ npm start
 ```
 
 Open the app using [http://localhost:3000/](http://localhost:3000/)
+
+Build test:
+
+````
+npm install -g serve
+serve -s build
+````
+
+Open the app using [http://localhost:5000/](http://localhost:5000/)
 
 **Warning: you have to rename *_config.js* by *config.js* and provide your own key for API TMDB**
 
@@ -317,3 +329,5 @@ See demo on [GitHub page](#).
 - [Reactstrap](https://reactstrap.github.io/)
 - [Developer tools and resources to integrate PayPal Commerce Platform](https://developer.paypal.com/home/)
 - [Sandbox Paypal](https://www.sandbox.paypal.com/myaccount/summary)
+- [How to Deploy Your React App to Heroku](https://medium.com/better-programming/how-to-deploy-your-react-app-to-heroku-aedc28b218ae)
+- [Heroku Buildpack for Node.js](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-nodejs)

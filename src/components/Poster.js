@@ -67,7 +67,7 @@ class PosterComponent extends Component {
       </div>
     );
   }
-}//\class PosterComponent 
+}//\class PosterComponent
 
 const mapDispatchToProps = (dispatch) => {
   return {

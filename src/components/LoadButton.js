@@ -17,7 +17,7 @@ class LoadButton extends Component {
             <Spinner />
           ):
           (
-            <div 
+            <div
               onClick={this.props.onButtonClick} //inverted flow to parent Home
               className="loadButton"
             >
