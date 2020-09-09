@@ -11,7 +11,15 @@ React Player, themoviedb. From Udemy
 
 Note: some bugs remain.
 
-For the demonstration, the mandatory signup and the paypal checkout have been removed.
+Try it on my [website](https://raigyo-dev.be/react-netflix/)
+
+PB:
+
+https://api.themoviedb.org/3/movie/popular?api_key=9decf197b21699a2000f890587121c1d&language=en
+
+https://api.themoviedb.org/3/movie/react-netflix?api_key=9decf197b21699a2000f890587121c1d&language=en
+
+
 
 
 ![capture app](./readme-img/capture-app1.jpg)
@@ -331,3 +339,4 @@ See demo on [GitHub page](#).
 - [Sandbox Paypal](https://www.sandbox.paypal.com/myaccount/summary)
 - [How to Deploy Your React App to Heroku](https://medium.com/better-programming/how-to-deploy-your-react-app-to-heroku-aedc28b218ae)
 - [Heroku Buildpack for Node.js](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-nodejs)
+- [Deployment](https://create-react-app.dev/docs/deployment/)
