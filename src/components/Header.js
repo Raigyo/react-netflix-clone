@@ -20,7 +20,7 @@ class HeaderComponent extends Component {
   render() {
     return (
       <div className="header">
-        <Link to={{ pathname: "/" }}>
+        <Link to={{ pathname: "/" }} >
           <FaFilm className="header--movie" name="film" />
         </Link>
         <h3>Netflix ;-)</h3>
