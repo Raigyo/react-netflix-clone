@@ -32,19 +32,19 @@ class App extends Component {
       const {
         data: { results, page, total_pages },
       } = await this.loadMovies();
-      //console.log("res", results);
+      console.log("results loadMovies: ", results);
       this.setState({
         movies: results,
         loading: false,
         activePage: page,
         totalPages: total_pages,
-        //image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
-        image: `http://image.tmdb.org/t/p/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+        image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+        //image: `http://image.tmdb.org/t/p/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
         mTitle: results[0].title,
         mDesc: results[0].overview,
       });
     } catch (e) {
-      console.log("e", e);
+      console.log("error loadMovies: ", e);
     }
   }
 
@@ -52,14 +52,14 @@ class App extends Component {
     const page = this.state.activePage + 1;
     // const url = `${API_URL}/movie/popular?api_key=${API_KEY}&page=${page}&language=en`;
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}&language=en`;
-    console.log("API_URL: ", url);
+    //console.log("API_URL: ", url);
     return axios.get(url);
   };
 
   //Search contact APi
   searchMovie = () => {
     const url =
-    `${API_URL}/search/movie?api_key=${API_KEY}&query=${this.state.searchText}&language=en`;
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.state.searchText}&language=en`;
     return axios.get(url);
   };
 
@@ -78,7 +78,7 @@ class App extends Component {
             loading: false,
             activePage: page,
             totalPages: total_pages,
-            image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+            image: `http://image.tmdb.org/t/p/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
             mTitle: results[0].title,
             mDesc: results[0].overview,
           });
@@ -103,7 +103,7 @@ class App extends Component {
         loading: false,
         activePage: page,
         totalPages: total_pages,
-        image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+        image: `http://image.tmdb.org/t/p/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
         mTitle: results[0].title,
         mDesc: results[0].overview,
       });
@@ -138,11 +138,11 @@ class App extends Component {
                     />
                   )}
                 />
-                <Route path="/player" exact component={MoviePlayer} />
-                <Route path="/player/:id" exact component={MoviePlayer} />
-                <Route path="/login" exact component={Login} />
-                <Route path="/payment" exact component={Payment} />
-                <Route path="/:id" exact component={Details} />
+                <Route path="/react-netflix-clone/player" exact component={MoviePlayer} />
+                <Route path="/react-netflix-clone/player/:id" exact component={MoviePlayer} />
+                <Route path="/react-netflix-clone/login" exact component={Login} />
+                <Route path="/react-netflix-clone/payment" exact component={Payment} />
+                <Route path="/react-netflix-clone/:id" exact component={Details} />
                 <Route component={NotFound} />
               </Switch>
             )}
