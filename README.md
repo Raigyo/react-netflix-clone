@@ -9,19 +9,6 @@ React Player, themoviedb. From Udemy
 '[Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)'.
 
 
-Note: some bugs remain.
-
-Try it on my [website](https://raigyo-dev.be/react-netflix/)
-
-PB:
-
-https://api.themoviedb.org/3/movie/popular?api_key=9decf197b21699a2000f890587121c1d&language=en
-
-https://api.themoviedb.org/3/movie/react-netflix?api_key=9decf197b21699a2000f890587121c1d&language=en
-
-
-
-
 ![capture app](./readme-img/capture-app1.jpg)
 
 ## About
