@@ -49,7 +49,9 @@ class App extends Component {
 
   loadMovies = () => {
     const page = this.state.activePage + 1;
-    const url = `${API_URL}/movie/popular?api_key=${API_KEY}&page=${page}&language=en`;
+    // const url = `${API_URL}/movie/popular?api_key=${API_KEY}&page=${page}&language=en`;
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}&language=en`;
+    console.log("API_URL: ", url);
     return axios.get(url);
   };
 
