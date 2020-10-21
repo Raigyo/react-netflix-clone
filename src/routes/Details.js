@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import axios from "axios";
 
 import { Spinner, HeaderDetails, ActorList } from "../components";
@@ -7,20 +7,19 @@ import { renderLogin } from "../utils/helpers";
 
 const flag = renderLogin();
 
-
 class Details extends Component {
   state = {
     loading: true,
     actors: [],
     mTitle: "",
     mDesc: "",
-    imgSrc: '',
+    imgSrc: "",
     revenue: "",
     runtime: "",
     status: "",
     vote: "",
-    flag: flag
-  }
+    flag: flag,
+  };
 
   async componentDidMount() {
     try {
@@ -30,6 +29,7 @@ class Details extends Component {
       }
       const movieId = this.props.match.params.id; /* var from url */
       const url = `${API_URL}/movie/${movieId}?api_key=${API_KEY}&language=en`;
+      console.log("url: ", url);
       const {
         data: {
           revenue,
@@ -38,53 +38,68 @@ class Details extends Component {
           overview,
           status,
           vote_average,
-          poster_path
-        }
+          poster_path,
+        },
       } = await this.loadInfos(url);
       //set state with callback with another request fo actors and loading false
-      this.setState({
-        revenue,
-        runtime,
-        mTitle: title,
-        mDesc: overview,
-        status,
-        imgSrc: poster_path,
-        vote: vote_average
-      }, async () => {
+      this.setState(
+        {
+          revenue,
+          runtime,
+          mTitle: title,
+          mDesc: overview,
+          status,
+          imgSrc: poster_path,
+          vote: vote_average,
+        },
+        async () => {
           const url = `${API_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=fr`;
-          const { data: { cast } } = await this.loadInfos(url);
+          const {
+            data: { cast },
+          } = await this.loadInfos(url);
           this.setState({ actors: [...cast], loading: false });
-      })
-    } catch(e) {
-    console.log('e', e);
+        }
+      );
+    } catch (e) {
+      console.log("e", e);
     }
   }
 
-  loadInfos = url => axios.get(url);
+  loadInfos = (url) => axios.get(url);
 
   render() {
-    const { loading, mTitle, mDesc, actors, imgSrc, revenue, runtime, status, vote } = this.state;
+    const {
+      loading,
+      mTitle,
+      mDesc,
+      actors,
+      imgSrc,
+      revenue,
+      runtime,
+      status,
+      vote,
+    } = this.state;
     return (
       <div className="app">
         {loading ? (
           <Spinner />
         ) : (
           <>
-          <HeaderDetails
-            mTitle={mTitle}
-            mDesc={mDesc}
-            imgSrc={imgSrc}
-            runtime={runtime}
-            revenue={revenue}
-            status={status}
-            vote={vote}
-          />
-          <ActorList actors={actors} />
+            <HeaderDetails
+              mTitle={mTitle}
+              mDesc={mDesc}
+              imgSrc={imgSrc}
+              runtime={runtime}
+              revenue={revenue}
+              status={status}
+              vote={vote}
+            />
+            <ActorList actors={actors} />
           </>
         )}
       </div>
     );
   }
-}//\class Details
+} //\class Details
 
 export { Details };

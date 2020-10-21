@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import axios from "axios";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { Home, Details, NotFound, MoviePlayer, Login, Payment } from "./routes";
-import { Header, Spinner } from './components';
-import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
+import { Header, Spinner } from "./components";
+import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from "./config";
 import { initFirebase } from "./utils/firebase-config";
 import CookieConsent from "react-cookie-consent";
 import store from "./store";
 
-import './App.css';
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -55,13 +55,13 @@ class App extends Component {
 
   //Search contact APi
   searchMovie = () => {
-    const url =
-    `${API_URL}/search/movie?api_key=${API_KEY}&query=${this.state.searchText}&language=en`;
+    const url = `${API_URL}/search/movie?api_key=${API_KEY}&query=${this.state.searchText}&language=en`;
     return axios.get(url);
   };
 
   //Onclick search
   handleSearch = (value) => {
+    console.log(value);
     try {
       this.setState(
         { loading: true, searchText: value, image: null },
@@ -75,7 +75,7 @@ class App extends Component {
             loading: false,
             activePage: page,
             totalPages: total_pages,
-            image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+             image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
             mTitle: results[0].title,
             mDesc: results[0].overview,
           });
@@ -160,6 +160,6 @@ class App extends Component {
       </Provider>
     );
   } //\render
-}//\class App
+} //\class App
 
 export default App;
