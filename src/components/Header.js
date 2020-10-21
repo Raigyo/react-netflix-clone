@@ -20,11 +20,11 @@ class HeaderComponent extends Component {
   render() {
     return (
       <div className="header">
-        <Link to={{ pathname: "/" }} >
+        <Link to={{ pathname: "/react-netflix-clone" }} >
           <FaFilm className="header--movie" name="film" />
         </Link>
         <h3>Netflix ;-)</h3>
-        <Link to={{ pathname: "/player" }}>
+        <Link to={{ pathname: "/react-netflix-clone/player" }}>
           <FaHeart className="header--heart" name="heart" />
         </Link>
         <div className="header--badge">{this.props.badge}</div>

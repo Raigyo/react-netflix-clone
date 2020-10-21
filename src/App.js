@@ -38,7 +38,8 @@ class App extends Component {
         loading: false,
         activePage: page,
         totalPages: total_pages,
-        image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+        //image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+        image: `http://image.tmdb.org/t/p/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
         mTitle: results[0].title,
         mDesc: results[0].overview,
       });
