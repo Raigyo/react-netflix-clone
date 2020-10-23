@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from 'axios';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
-
 import { Home, Details, NotFound, MoviePlayer, Login, Payment } from "./routes";
 import { Header, Spinner } from './components';
 import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';

@@ -327,3 +327,4 @@ See demo on [GitHub page](#).
 - [How to Deploy Your React App to Heroku](https://medium.com/better-programming/how-to-deploy-your-react-app-to-heroku-aedc28b218ae)
 - [Heroku Buildpack for Node.js](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-nodejs)
 - [Deployment](https://create-react-app.dev/docs/deployment/)
+- [Heroku Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars)
