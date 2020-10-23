@@ -72,7 +72,7 @@ class App extends Component {
           const {
             data: { results, page, total_pages },
           } = await this.searchMovie();
-          //console.log("res", results);
+          console.log("res handleSearch: ", results);
           this.setState({
             movies: results,
             loading: false,
@@ -115,7 +115,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL} forceRefresh={true}>
           <div className="App">
             {/* badge state: number of movies displayed */}
             <Header badge={this.state.badge} />
@@ -138,11 +138,11 @@ class App extends Component {
                     />
                   )}
                 />
-                <Route path="/react-netflix-clone/player" exact component={MoviePlayer} />
-                <Route path="/react-netflix-clone/player/:id" exact component={MoviePlayer} />
-                <Route path="/react-netflix-clone/login" exact component={Login} />
-                <Route path="/react-netflix-clone/payment" exact component={Payment} />
-                <Route path="/react-netflix-clone/:id" exact component={Details} />
+                <Route path="/player" exact component={MoviePlayer} />
+                <Route path="/player/:id" exact component={MoviePlayer} />
+                <Route path="/login" exact component={Login} />
+                <Route path="/payment" exact component={Payment} />
+                <Route path="/:id" exact component={Details} />
                 <Route component={NotFound} />
               </Switch>
             )}

@@ -29,7 +29,7 @@ class Details extends Component {
         return;
       }
       const movieId = this.props.match.params.id; /* var from url */
-      const url = `${API_URL}/movie/${movieId}?api_key=${API_KEY}&language=en`;
+      const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en`;
       const {
         data: {
           revenue,
@@ -51,7 +51,7 @@ class Details extends Component {
         imgSrc: poster_path,
         vote: vote_average
       }, async () => {
-          const url = `${API_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=fr`;
+          const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}&language=fr`;
           const { data: { cast } } = await this.loadInfos(url);
           this.setState({ actors: [...cast], loading: false });
       })

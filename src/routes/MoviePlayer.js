@@ -109,7 +109,7 @@ class MoviePlayer extends Component {
   //We have to retrieve duration for movies of wishlist
   getTime = movieId => {
     return new Promise((resolve, reject) => {
-      const url = `${API_URL}/movie/${movieId}?api_key=${API_KEY}&language=en`;
+      const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en`;
       axios
         .get(url)
         .then((data) => {
