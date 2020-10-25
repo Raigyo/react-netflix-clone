@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 import { Poster } from './index';
 
 import '../css/PosterList.css';
+
+const { REACT_APP_IMAGE_BASE_URL, REACT_APP_POSTER_SIZE } = process.env;
 
 let wish;
 
@@ -10,7 +11,7 @@ class PosterList extends Component {
   renderPoster = () =>{
     //map = foreach ,  key needed
     return this.props.movies.map( movie => {
-      const imgSrc = `${IMAGE_BASE_URL}/${POSTER_SIZE}/${movie.poster_path}`;
+      const imgSrc = `${REACT_APP_IMAGE_BASE_URL}/${REACT_APP_POSTER_SIZE}/${movie.poster_path}`;
       wish = false;
       //Display empty or full heart
       if (this.props.localMovies) {

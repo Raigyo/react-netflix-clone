@@ -1,14 +1,24 @@
 import { initializeApp } from 'firebase';
 
+const {
+  REACT_APP_APIKEY,
+  REACT_APP_AUTHDOMAIN,
+  REACT_APP_DATABASEURL,
+  REACT_APP_PROJECTID,
+  REACT_APP_STORAGEBUCKET,
+  REACT_APP_MESSAGINGSENDERID,
+  REACT_APP_APPID
+} = process.env;
+
 export const initFirebase = () => {
   var firebaseConfig = {
-    apiKey: "AIzaSyBJ8WjwI0bKNPpTDwozdBYF0GLz4RQzyuE",
-    authDomain: "mini-netflix-64ac0.firebaseapp.com",
-    databaseURL: "https://mini-netflix-64ac0.firebaseio.com",
-    projectId: "mini-netflix-64ac0",
-    storageBucket: "mini-netflix-64ac0.appspot.com",
-    messagingSenderId: "537150750226",
-    appId: "1:537150750226:web:42c0c005c781f799b2e2cb",
+    apiKey: REACT_APP_APIKEY,
+    authDomain: REACT_APP_AUTHDOMAIN,
+    databaseURL: REACT_APP_DATABASEURL,
+    projectId: REACT_APP_PROJECTID,
+    storageBucket: REACT_APP_STORAGEBUCKET,
+    messagingSenderId: REACT_APP_MESSAGINGSENDERID,
+    appId: REACT_APP_APPID,
   };
 
   initializeApp(firebaseConfig);

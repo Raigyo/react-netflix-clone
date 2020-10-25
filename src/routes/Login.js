@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import firebase from "firebase";
 import { Alert } from "reactstrap";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
@@ -24,24 +25,46 @@ const uiConfig = {
     callbacks: {//If succeed
         signInSuccessWithAuthResult : () => {
             console.log('connection succeed');
-            localStorage.setItem(NETFLIX_APP_LOGGEDIN, true);
+            //localStorage.setItem(NETFLIX_APP_LOGGEDIN, true);
+            sessionStorage.setItem(NETFLIX_APP_LOGGEDIN, true);
             return true;
         }
     }
   };
 
 class Login extends Component {
+
+  // Connect without login
+  withoutLogin = () => {
+    sessionStorage.setItem(NETFLIX_APP_LOGGEDIN, true);
+  }
+
   render() {
     return (
-      <div className="login">
-        <Alert color="primary">
-          <h3>You need to login to continue</h3>
-        </Alert>
-        <StyledFirebaseAuth
-          uiConfig={uiConfig}
-          firebaseAuth={firebase.auth()}
-          uiCallback={(ui) => ui.disableAutoSignIn()}
-        />
+      <div>
+        <div className="login">
+          <Alert color="primary">
+            <h3>You need to login to continue</h3>
+          </Alert>
+          <StyledFirebaseAuth
+            uiConfig={uiConfig}
+            firebaseAuth={firebase.auth()}
+            uiCallback={(ui) => ui.disableAutoSignIn()}
+          />
+          <div>
+            <Alert color="success">
+              <Link
+                style={{ textDecoration: "none", color: "black" }}
+                onClick={this.withoutLogin}
+                to={{
+                  pathname: `/`,
+                }}
+              ><h3>I want to continue without login</h3>
+            </Link>
+            </Alert>
+          </div>
+        </div>
+
       </div>
     );
   }

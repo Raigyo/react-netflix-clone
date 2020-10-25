@@ -4,12 +4,13 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { Home, Details, NotFound, MoviePlayer, Login, Payment } from "./routes";
 import { Header, Spinner } from './components';
-import { API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
 import { initFirebase } from "./utils/firebase-config";
 import CookieConsent from "react-cookie-consent";
 import store from "./store";
 
 import './App.css';
+
+const { REACT_APP_API_KEY, REACT_APP_IMAGE_BASE_URL, REACT_APP_BACKDROP_SIZE } = process.env;
 
 class App extends Component {
   state = {
@@ -38,7 +39,7 @@ class App extends Component {
         loading: false,
         activePage: page,
         totalPages: total_pages,
-        image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+        image: `${REACT_APP_IMAGE_BASE_URL}/${REACT_APP_BACKDROP_SIZE}/${results[0].backdrop_path}`,
         mTitle: results[0].title,
         mDesc: results[0].overview,
         searchMovies: false
@@ -53,14 +54,14 @@ class App extends Component {
   // Axios contact APi - called on 'componentDidMount'
   loadMovies = () => {
     const page = this.state.activePage;
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}&language=en`;
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${REACT_APP_API_KEY}&page=${page}&language=en`;
     return axios.get(url);
   };
 
   // Axios contact APi - called on 'handleSearch'
   searchMovie = () => {
     const url =
-    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.state.searchText}&language=en`;
+    `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_API_KEY}&query=${this.state.searchText}&language=en`;
     return axios.get(url);
   };
 
@@ -69,11 +70,11 @@ class App extends Component {
     // console.log("state.searchMovies: ", this.state.searchMovies);
     const page = this.state.activePage+1;
     if (this.state.searchMovies){
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.state.searchText}&page=${page}&language=en`;
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_API_KEY}&query=${this.state.searchText}&page=${page}&language=en`;
       return axios.get(url);
     }
     else {
-      const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}&language=en`;
+      const url = `https://api.themoviedb.org/3/movie/popular?api_key=${REACT_APP_API_KEY}&page=${page}&language=en`;
       return axios.get(url);
     }
   };
@@ -95,7 +96,7 @@ class App extends Component {
             loading: false,
             activePage: page,
             totalPages: total_pages,
-            image: `http://image.tmdb.org/t/p/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+            image: `http://image.tmdb.org/t/p/${REACT_APP_BACKDROP_SIZE}/${results[0].backdrop_path}`,
             mTitle: results[0].title,
             mDesc: results[0].overview,
             searchMovies: true
@@ -121,7 +122,7 @@ class App extends Component {
         loading: false,
         activePage: page,
         totalPages: total_pages,
-        image: `http://image.tmdb.org/t/p/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+        image: `http://image.tmdb.org/t/p/${REACT_APP_BACKDROP_SIZE}/${results[0].backdrop_path}`,
         mTitle: results[0].title,
         mDesc: results[0].overview,
       });

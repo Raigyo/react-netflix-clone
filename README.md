@@ -330,5 +330,6 @@ See demo on [GitHub page](#).
 - [Heroku Buildpack for Node.js](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-nodejs)
 - [Deployment](https://create-react-app.dev/docs/deployment/)
 - [Heroku Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars)
+- [Using environment variables in a React application](https://medium.com/@adostes/using-environment-variables-in-a-react-application-ac3b6c307373)
 - [Causes of Heroku H10-App Crashed Error And How To Solve Them](https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl)
 - [Deploy a React Chat App to Heroku](https://getstream.io/blog/deploy-a-react-chat-app-to-heroku/)

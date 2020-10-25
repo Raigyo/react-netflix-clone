@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Container, Stars } from "./index";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import { FaHourglassHalf } from "react-icons/fa";
-import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 import { calcTime, convertMoney } from '../utils/helpers';//import helpers
 
 import "../css/HeaderDetails.css";
 
+const { REACT_APP_IMAGE_BASE_URL, REACT_APP_POSTER_SIZE } = process.env;
 
 class HeaderDetails extends Component {
   calcVote = () => {
@@ -26,7 +26,7 @@ class HeaderDetails extends Component {
   }
   render() {
     this.calcVote();
-    const imgSrc = `${IMAGE_BASE_URL}/${POSTER_SIZE}/${this.props.imgSrc}`;
+    const imgSrc = `${REACT_APP_IMAGE_BASE_URL}/${REACT_APP_POSTER_SIZE}/${this.props.imgSrc}`;
     return (
       <div className="headerDetails">
         <div className="badge-decoration">{this.props.status}</div>

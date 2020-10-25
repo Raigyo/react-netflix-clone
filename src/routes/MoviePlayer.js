@@ -3,11 +3,12 @@ import axios from "axios";
 import _ from "lodash";
 import firebase from 'firebase';
 import { VideoPlayer, MvPlayerList, Spinner } from "../components/";
-import { API_KEY, API_URL, IMAGE_BASE_URL, BACKDROP_SIZE } from '../config';
 import { calcTime } from '../utils/helpers';
 import { renderLogin } from "../utils/helpers";
 
 import "../css/MoviePlayer.css";
+
+const { REACT_APP_API_KEY, REACT_APP_IMAGE_BASE_URL, REACT_APP_BACKDROP_SIZE } = process.env;
 
 let newMovies = [];
 
@@ -47,7 +48,7 @@ class MoviePlayer extends Component {
           position: index + 1,
           title: oldMovie.title,
           duration: results[index],
-          imageUrl: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${oldMovie.backdrop_path}`,
+          imageUrl: `${REACT_APP_IMAGE_BASE_URL}/${REACT_APP_BACKDROP_SIZE}/${oldMovie.backdrop_path}`,
           videoUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
         };
       });
@@ -109,7 +110,7 @@ class MoviePlayer extends Component {
   //We have to retrieve duration for movies of wishlist
   getTime = movieId => {
     return new Promise((resolve, reject) => {
-      const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en`;
+      const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${REACT_APP_API_KEY}&language=en`;
       axios
         .get(url)
         .then((data) => {
