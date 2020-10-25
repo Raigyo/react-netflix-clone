@@ -19,7 +19,8 @@ class MoviePlayer extends Component {
     movies: [],
     selectedMovie: [],
     loading: true,
-    flag: flag
+    flag: flag,
+    emptyList: false
   };
 
   async componentDidMount() {
@@ -74,6 +75,7 @@ class MoviePlayer extends Component {
     } else {//empty
       this.setState({
         loading: false,
+        emptyList: true
       });
     }
   }//\componentDidMount
@@ -142,9 +144,9 @@ class MoviePlayer extends Component {
     const { movies, selectedMovie } = this.state;
     return (
       <div className="moviePlayer">
-        {this.state.loading ? (
+        {this.state.loading ?
           <Spinner />
-        ) : (
+         : !this.state.emptyList ?
           <>
             <VideoPlayer
               videoUrl={selectedMovie.videoUrl}
@@ -153,10 +155,19 @@ class MoviePlayer extends Component {
             />
             <MvPlayerList movies={movies} selectedMovie={selectedMovie} />
           </>
-        )}
+          : <div style={divStyle}><p>List is empty!</p></div>
+        }
       </div>
     );
   }
 }//\class MoviePlayer
+
+const divStyle = {
+  margin: "200px",
+  fontSize: "5rem",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+};
 
 export  {MoviePlayer};

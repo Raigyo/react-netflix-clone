@@ -59,7 +59,7 @@ class Login extends Component {
                 to={{
                   pathname: `/`,
                 }}
-              ><h3>I want to continue without login</h3>
+              ><h3>Visit the website without login in</h3>
             </Link>
             </Alert>
           </div>
