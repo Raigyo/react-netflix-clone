@@ -9,7 +9,6 @@ class MvPlayerList extends Component {
   constructor(props) {
     super(props);
     this.state = { reload: false };
-
   }
 
   callbackFunction = (childData) => {

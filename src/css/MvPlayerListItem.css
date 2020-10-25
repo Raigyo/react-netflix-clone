@@ -51,5 +51,6 @@
 }
 
 .poster2--icon {
-  width: 20%;
+  cursor: pointer;
+  width: 190%
 }

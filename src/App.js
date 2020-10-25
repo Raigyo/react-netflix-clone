@@ -19,12 +19,13 @@ class App extends Component {
     image: null,
     mTitle: "",
     mDesc: "",
-    activePage: 0,
+    activePage: 1,
     totalPages: 0,
     searchText: "",
+    searchMovies: false
   };
 
-  //Load data from API/Update states
+  // Load data from API / Update states
   async componentDidMount() {
     try {
       initFirebase();
@@ -38,31 +39,48 @@ class App extends Component {
         activePage: page,
         totalPages: total_pages,
         image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
-        //image: `http://image.tmdb.org/t/p/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
         mTitle: results[0].title,
         mDesc: results[0].overview,
+        searchMovies: false
       });
     } catch (e) {
       console.log("error loadMovies: ", e);
     }
   }
 
+  // AXIOS REQUEST API
+
+  // Axios contact APi - called on 'componentDidMount'
   loadMovies = () => {
-    const page = this.state.activePage + 1;
-    // const url = `${API_URL}/movie/popular?api_key=${API_KEY}&page=${page}&language=en`;
+    const page = this.state.activePage;
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}&language=en`;
-    //console.log("API_URL: ", url);
     return axios.get(url);
   };
 
-  //Search contact APi
+  // Axios contact APi - called on 'handleSearch'
   searchMovie = () => {
     const url =
     `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.state.searchText}&language=en`;
     return axios.get(url);
   };
 
-  //Onclick search
+  // Axios contact APi - called on 'loadMore'
+  moreMovie = () => {
+    // console.log("state.searchMovies: ", this.state.searchMovies);
+    const page = this.state.activePage+1;
+    if (this.state.searchMovies){
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.state.searchText}&page=${page}&language=en`;
+      return axios.get(url);
+    }
+    else {
+      const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}&language=en`;
+      return axios.get(url);
+    }
+  };
+
+  // BUTTONS EVENTS
+
+  // Onclick button: 'search for a movie'
   handleSearch = (value) => {
     try {
       this.setState(
@@ -80,6 +98,7 @@ class App extends Component {
             image: `http://image.tmdb.org/t/p/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
             mTitle: results[0].title,
             mDesc: results[0].overview,
+            searchMovies: true
           });
         }
       );
@@ -89,13 +108,13 @@ class App extends Component {
     //console.log("handleSearch", value);
   };
 
-  //Click More: next page of movies
+  // Onclick button: 'see more'
   loadMore = async () => {
     try {
       this.setState({ loading: true });
       const {
         data: { results, page, total_pages },
-      } = await this.loadMovies();
+      } = await this.moreMovie();
       console.log("res", results);
       this.setState({
         movies: [...this.state.movies, ...results], //array concat
@@ -110,6 +129,8 @@ class App extends Component {
       console.log("error load more", e);
     }
   };
+
+  // RENDER
 
   render() {
     return (

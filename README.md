@@ -8,6 +8,7 @@
 React Player, themoviedb. From Udemy
 '[Maitriser React de A à Z - Créer son propre NETFLIX](https://www.udemy.com/course/maitriser-react-de-a-a-z-creer-son-propre-netflix/)'.
 
+Demo on [Heroku](https://raigyodev-react-netflix-clone.herokuapp.com/).
 
 ![capture app](./readme-img/capture-app1.jpg)
 
@@ -320,6 +321,7 @@ See demo on [GitHub page](#).
 - [ReactJS Inverse Data Flow in ES6](https://medium.com/@jtabach/reactjs-inverse-data-flow-in-es6-9d1c3c356be7)
 - [API TMDB (The Movie DataBase)](https://www.themoviedb.org/)
 - [Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- [React-router: How to manually invoke Link?](https://stackoverflow.com/questions/29244731/react-router-how-to-manually-invoke-link)
 - [10 Lodash functions everyone should know](https://medium.com/voobans-tech-stories/10-lodash-functions-everyone-should-know-334b372aec5d)
 - [Reactstrap](https://reactstrap.github.io/)
 - [Developer tools and resources to integrate PayPal Commerce Platform](https://developer.paypal.com/home/)
@@ -329,3 +331,4 @@ See demo on [GitHub page](#).
 - [Deployment](https://create-react-app.dev/docs/deployment/)
 - [Heroku Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars)
 - [Causes of Heroku H10-App Crashed Error And How To Solve Them](https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl)
+- [Deploy a React Chat App to Heroku](https://getstream.io/blog/deploy-a-react-chat-app-to-heroku/)
