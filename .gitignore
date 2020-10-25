@@ -3,6 +3,7 @@
 #API
 
 .env
+_config.js
 
 # dependencies
 /node_modules
@@ -28,3 +29,4 @@ yarn-error.log*
 
 package-lock.json
 _package.json
+src/_images
